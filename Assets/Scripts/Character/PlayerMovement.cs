@@ -15,6 +15,6 @@ public class PlayerMovement: MonoBehaviour
         
         Vector2 moveDirection = new Vector3 (moveX, moveY);
 
-        transform.Translate(moveDirection * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * moveDirection);
     }
 }
