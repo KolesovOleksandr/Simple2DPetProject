@@ -1011,10 +1011,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1855694043}
   - component: {fileID: 1855694042}
-  - component: {fileID: 1855694045}
   - component: {fileID: 1855694044}
   - component: {fileID: 1855694046}
   - component: {fileID: 1855694047}
+  - component: {fileID: 1855694048}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1123,20 +1123,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1855694045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855694041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1db8dd1d02b0f345a9cc53ae5d5edec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Move
-  moveSpeed: 5
-  rb: {fileID: 1855694044}
 --- !u!61 &1855694046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1196,6 +1182,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 5
+--- !u!114 &1855694048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855694041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea19f78748139e46ba4bbf85c3b86f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1 &2111263338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1205,7 @@ GameObject:
   - component: {fileID: 2111263341}
   - component: {fileID: 2111263340}
   - component: {fileID: 2111263339}
+  - component: {fileID: 2111263342}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1301,6 +1300,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111263342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111263338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2211ee9f55bf5ef4e98f9e2a5b604e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
