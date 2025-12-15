@@ -7,7 +7,7 @@ public class ChaserMovement : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        player = GameObject.Find("Player").transform;
     }
 
     void Update()
