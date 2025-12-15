@@ -4,17 +4,30 @@ public class PlayerMovement: MonoBehaviour
 {
     public float speed = 5f;
 
-    public void Start()
+    Rigidbody2D rb;
+    Vector2 input;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
+    }
+
+    void Start()
     {
     }
 
-    public void Update()
+    void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        
-        Vector2 moveDirection = new Vector3 (moveX, moveY);
 
-        transform.Translate(speed * Time.deltaTime * moveDirection);
+        input = new Vector2(moveX, moveY).normalized;
+    }
+
+    public void FixedUpdate()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * input);
     }
 }

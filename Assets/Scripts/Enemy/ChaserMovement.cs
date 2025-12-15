@@ -9,6 +9,7 @@ public class ChaserMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
     }
 
     void Start()
@@ -24,6 +25,6 @@ public class ChaserMovement : MonoBehaviour
         }
 
         Vector2 dir = ((Vector2)player.position - rb.position).normalized;
-        rb.MovePosition(rb.position + speed * Time.deltaTime * dir);
+        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * dir);
     }
 }
