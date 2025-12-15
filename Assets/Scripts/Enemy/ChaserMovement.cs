@@ -2,22 +2,28 @@ using UnityEngine;
 
 public class ChaserMovement : MonoBehaviour
 {
-    private Transform player;
     public float speed = 3f;
+    Transform player;
+    Rigidbody2D rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Start()
     {
         player = GameObject.Find("Player").transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (player == null)
         {
             return;
         }
 
-        Vector3 direction = (player.position - transform.position).normalized;
-        transform.position += (direction * speed * Time.deltaTime);
+        Vector2 dir = ((Vector2)player.position - rb.position).normalized;
+        rb.MovePosition(rb.position + speed * Time.deltaTime * dir);
     }
 }
