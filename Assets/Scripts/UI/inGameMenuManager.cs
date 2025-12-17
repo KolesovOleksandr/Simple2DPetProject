@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InGameMenuManager : MonoBehaviour
 {
@@ -40,5 +41,17 @@ public class InGameMenuManager : MonoBehaviour
         {
             pauseMenu.SetActive(false);
         }
+    }
+
+    public void RestartCurentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        isPause = false;
+        Time.timeScale = 1f;
+    }
+
+    public void LoadMainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
