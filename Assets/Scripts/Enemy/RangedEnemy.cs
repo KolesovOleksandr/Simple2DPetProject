@@ -1,17 +1,35 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 
-public class RangedEnemy : Enemy
-{
-    [SerializeField] private float preferedDistance = 10f;
-
-    protected override void Chase()
+    public class RangedEnemy : Enemy
     {
-        float distance = Vector2.Distance(transform.position, target.position);
+        [SerializeField] private float preferedDistance = 10f;
 
-        if (distance > preferedDistance)
+        public GameObject projectile;
+
+        protected override void Chase()
         {
-            Vector3 dir = (target.position - transform.position).normalized;
-            transform.position += speed * Time.deltaTime * dir;
+            float distance = Vector2.Distance(transform.position, target.position);
+
+            if (distance > preferedDistance)
+            {
+                Vector3 dir = (target.position - transform.position).normalized;
+                transform.position += speed * Time.deltaTime * dir;
+            }
+        }
+
+        protected override void OnUpdate()
+        {
+            if (nextHitTime > Time.time)
+            {
+                return;
+            }
+
+            float distance = Vector2.Distance(transform.position, target.position);
+            if ( distance <= preferedDistance)
+            {
+                Instantiate(projectile, transform.position, Quaternion.identity);
+            }
+
+            nextHitTime = Time.time + cooldown;
         }
     }
-}

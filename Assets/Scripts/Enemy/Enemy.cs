@@ -22,7 +22,10 @@ public abstract class Enemy : MonoBehaviour
         }
 
         Chase();
+        OnUpdate();
     }
 
     protected abstract void Chase();
+
+    protected virtual void OnUpdate() { }
 }
