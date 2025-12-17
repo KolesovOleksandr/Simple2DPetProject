@@ -1,16 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerHealth: MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    private int maxHealth = 100;
-    private int health;
+    [SerializeField] private float maxHealth = 100f;
 
-    void Awake()
+    [SerializeField] private float health;
+
+    void Start()
     {
         health = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         Debug.Log($"Player HP: {health}");
@@ -18,7 +19,7 @@ public class PlayerHealth: MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player died!");
-            
+
             gameObject.SetActive(false);
         }
     }
