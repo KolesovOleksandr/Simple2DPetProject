@@ -4,6 +4,7 @@ public class EnemyProjectile : MonoBehaviour, IDamageDealer
 {
     [SerializeField] private float speed = 30f;
     [SerializeField] private float damage = 10f;
+    [SerializeField] private float lifetime = 10f;
     private Transform target;
 
     private float timer = 0f;
@@ -11,7 +12,7 @@ public class EnemyProjectile : MonoBehaviour, IDamageDealer
 
     public float Damage => damage;
 
-    void Start()
+    void Awake()
     {
         target = GameObject.Find("Player").transform;
         direction = (target.position - transform.position).normalized;
@@ -21,12 +22,11 @@ public class EnemyProjectile : MonoBehaviour, IDamageDealer
     {
         timer += Time.deltaTime;
 
-        transform.position = transform.position + speed * Time.deltaTime * direction;
+        transform.position += speed * Time.deltaTime * direction;
 
-        if (timer > 10f)
+        if (timer > lifetime)
         {
             Destroy(gameObject);
-            timer = 0f;
         }
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4292496393762805512}
   - component: {fileID: 3865990057621836366}
   - component: {fileID: -8283504497874682399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,5 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemy
   speed: 3
   cooldown: 2
+  health: 0
+  maxHealth: 50
   preferedDistance: 10
   projectile: {fileID: 3204054613657891347, guid: 36af601681c207946882d636ccfe808d, type: 3}

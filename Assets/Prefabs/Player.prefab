@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7924621863198031170}
   - component: {fileID: 1077127096635478841}
   - component: {fileID: 8147829149620091765}
+  - component: {fileID: -5676860988911200460}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -125,7 +126,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -195,3 +196,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
+  health: 0
+--- !u!114 &-5676860988911200460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332802597914955638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865ff1f87cc281d4d92f5c6b3a2a598a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoShooter
+  globalAttackSpeedMultiplier: 1
+  globalSpeedMultiplier: 1
+  globalDamageMultiplier: 1
+  radius: 10
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 8
+  bufferSize: 64
+  weapons:
+  - projectile: {fileID: 1501771220266763560, guid: ba95847d59c12a040bf74d1f23f63465, type: 3}
+    nextFireTime: 0

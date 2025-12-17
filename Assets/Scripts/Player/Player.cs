@@ -3,14 +3,9 @@ using UnityEngine;
 public class Player: MonoBehaviour
 {
     public float speed = 5f;
-
     public Rigidbody2D rb;
 
     private Vector2 input;
-
-    void Awake()
-    {
-    }
 
     void Start()
     {

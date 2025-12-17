@@ -4,14 +4,15 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected float speed = 3f;
     [SerializeField] protected float cooldown = 2f;
-    protected Transform target;
-
+    [SerializeField] protected float health, maxHealth = 100f;
     protected float nextHitTime;
+
+    protected Transform target;
 
     protected virtual void Start()
     {
-        
         target = GameObject.Find("Player").transform;
+        health = maxHealth;
     }
 
     protected virtual void Update()
@@ -26,6 +27,17 @@ public abstract class Enemy : MonoBehaviour
     }
 
     protected abstract void Chase();
+
+    public virtual void TakeDamage(float damage)
+    {
+        health -= damage;
+        Debug.Log($"Enemy HP: {health}");
+
+        if (health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     protected virtual void OnUpdate() { }
 }
