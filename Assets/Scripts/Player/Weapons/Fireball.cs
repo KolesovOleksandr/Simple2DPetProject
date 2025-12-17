@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fireball : ProjectileBase, IDamageDealer
+public class Fireball : ProjectileBase
 {
     [SerializeField] private float baseDamage = 10f;
     [SerializeField] private float baseSpeed = 10f;

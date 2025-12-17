@@ -8,21 +8,22 @@ public class EnemyProjectile : MonoBehaviour, IDamageDealer
     private Transform target;
 
     private float timer = 0f;
-    private Vector3 direction;
+    private Rigidbody2D rb;
 
     public float Damage => damage;
 
-    void Awake()
+    void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         target = GameObject.Find("Player").transform;
-        direction = (target.position - transform.position).normalized;
+        Vector3 direction = (target.position - transform.position).normalized;
+
+        rb.linearVelocity = speed * direction;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
-
-        transform.position += speed * Time.deltaTime * direction;
 
         if (timer > lifetime)
         {

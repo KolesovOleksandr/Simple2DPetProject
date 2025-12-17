@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public abstract class ProjectileBase : MonoBehaviour
+public abstract class ProjectileBase : MonoBehaviour, IDamageDealer
 {
     protected Rigidbody2D rb;
 
     public virtual float Cooldown { get; }
     public virtual float Damage { get; }
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     public abstract void Launch(Vector3 direction, float damageMultiplier, float speedMultiplier);
 
