@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InGameMenuManager : MonoBehaviour
 {
+
     [SerializeField] private GameObject pauseMenu;
 
     private bool isPause = false;
