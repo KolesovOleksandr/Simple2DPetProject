@@ -35,8 +35,14 @@ public abstract class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            gameObject.SetActive(false);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+
     }
 
     protected virtual void OnUpdate() { }
