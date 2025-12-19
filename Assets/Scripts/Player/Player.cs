@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class Player: MonoBehaviour
+public class Player : MonoBehaviour, IMovable
 {
     public float speed = 5f;
     public Rigidbody2D rb;
 
     private Vector2 input;
+
+    public float Speed => speed;
 
     void Start()
     {

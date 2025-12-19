@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, IMovable
 {
     [SerializeField] protected float speed = 3f;
     [SerializeField] protected float cooldown = 2f;
@@ -8,6 +8,8 @@ public abstract class Enemy : MonoBehaviour
     protected float nextHitTime;
 
     protected Transform target;
+
+    public float Speed => speed;
 
     protected virtual void Start()
     {
