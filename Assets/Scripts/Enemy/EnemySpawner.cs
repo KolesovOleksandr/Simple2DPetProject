@@ -20,14 +20,14 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator Spawn(EnemySpawnEntry entry)
     {
-        while (spawning)
+        while (true)
         {
+            yield return new WaitUntil(() => spawning);
             yield return new WaitForSeconds(entry.spawnRate);
 
             Vector2 dir = Random.insideUnitCircle.normalized;
             float dist = Random.Range(minRadius, maxRadius);
             Vector3 spawnPos = player.position + (Vector3)(dir * dist);
-            Debug.Log(player.position);
 
             Instantiate(entry.enemy, spawnPos, Quaternion.identity);
         }

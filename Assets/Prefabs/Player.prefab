@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5784590288175870823}
   - component: {fileID: 4786451211698652352}
   - component: {fileID: 1718619993016054992}
+  - component: {fileID: 9028828651819954575}
   - component: {fileID: 7924621863198031170}
   - component: {fileID: 1077127096635478841}
   - component: {fileID: 8147829149620091765}
@@ -142,6 +143,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!58 &9028828651819954575
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332802597914955638}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 191
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!50 &7924621863198031170
 Rigidbody2D:
   serializedVersion: 5
@@ -182,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 5
-  rb: {fileID: 7924621863198031170}
+  magnetRadius: 2
 --- !u!114 &8147829149620091765
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -155,5 +155,6 @@ MonoBehaviour:
   cooldown: 2
   health: 0
   maxHealth: 10
+  experience: {fileID: -5721573473046974358, guid: f5170fc617b3ec24da487d7c4288d44a, type: 3}
   preferedDistance: 10
   projectile: {fileID: 3204054613657891347, guid: 36af601681c207946882d636ccfe808d, type: 3}

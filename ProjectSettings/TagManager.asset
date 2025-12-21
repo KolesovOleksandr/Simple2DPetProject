@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Expirience
+  - Experience
   layers:
   - Default
   - TransparentFX
@@ -12,8 +12,8 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
-  - 
+  - Pickup
+  - Projectile
   - 
   - 
   - 

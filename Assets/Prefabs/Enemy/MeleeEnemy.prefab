@@ -155,4 +155,5 @@ MonoBehaviour:
   cooldown: 2
   health: 0
   maxHealth: 20
+  experience: {fileID: -5721573473046974358, guid: f5170fc617b3ec24da487d7c4288d44a, type: 3}
   damage: 10

@@ -1,14 +1,44 @@
 using UnityEngine;
 
-public class Expirience : MonoBehaviour
+public class Experience : MonoBehaviour
 {
-    [SerializeField] private float exp = 20f;
-    
-    public float ExpirienceCost
+    [SerializeField] float baseExp = 20f;
+    [SerializeField] float pickupRadius = 0.1f;
+    [SerializeField] float pickupSpeed = 10f;
+
+    GameObject magneticTarget;
+    bool magnetized = false;
+
+    public float GetExperience(float multiplier)
     {
-        get
+        return baseExp * multiplier;
+    }
+
+    void Start()
+    {
+        magneticTarget = GameObject.FindWithTag("Player");
+    }
+
+    void Update()
+    {
+        if (!magnetized || magneticTarget == null)
         {
-            return exp; 
+            return;
         }
+
+        transform.position = Vector3.MoveTowards(
+            transform.position, 
+            magneticTarget.transform.position, 
+            pickupSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, magneticTarget.transform.position) < pickupRadius)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        magnetized = true;
     }
 }

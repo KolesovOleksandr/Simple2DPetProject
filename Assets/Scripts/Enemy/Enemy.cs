@@ -5,6 +5,7 @@ public abstract class Enemy : MonoBehaviour, IMovable
     [SerializeField] protected float speed = 3f;
     [SerializeField] protected float cooldown = 2f;
     [SerializeField] protected float health, maxHealth = 100f;
+    [SerializeField] protected Experience experience;
     protected float nextHitTime;
 
     protected Transform target;
@@ -13,7 +14,7 @@ public abstract class Enemy : MonoBehaviour, IMovable
 
     protected virtual void Start()
     {
-        target = GameObject.Find("Player").transform;
+        target = GameObject.FindWithTag("Player").transform;
         health = maxHealth;
     }
 
@@ -43,8 +44,9 @@ public abstract class Enemy : MonoBehaviour, IMovable
 
     private void Die()
     {
-        Destroy(gameObject);
+        Instantiate(experience, transform.position, Quaternion.identity);
 
+        Destroy(gameObject);
     }
 
     protected virtual void OnUpdate() { }

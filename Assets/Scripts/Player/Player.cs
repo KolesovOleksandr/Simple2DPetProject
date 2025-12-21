@@ -2,16 +2,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IMovable
 {
-    public float speed = 5f;
-    public Rigidbody2D rb;
-
-    private Vector2 input;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float magnetRadius = 2f; 
+    
+    CircleCollider2D magnetCollider; 
+    Rigidbody2D rb;
+    Vector2 input;
 
     public float Speed => speed;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        magnetCollider = GetComponent<CircleCollider2D>();
+
         rb.gravityScale = 0;
+        magnetCollider.radius = magnetRadius;
     }
 
     void Update()

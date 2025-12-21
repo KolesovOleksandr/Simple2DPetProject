@@ -51,4 +51,5 @@ MonoBehaviour:
     spawnRate: 3
   minRadius: 5
   maxRadius: 20
+  spawning: 1
   player: {fileID: 5784590288175870823, guid: a3ca571901bb1ac41b8e233f6e1b6b75, type: 3}
