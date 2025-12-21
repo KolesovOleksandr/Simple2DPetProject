@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IMovable
 {
     [SerializeField] float speed = 5f;
-    [SerializeField] float magnetRadius = 2f; 
+    [SerializeField] float magnetRadius = 1f;
     
     CircleCollider2D magnetCollider; 
     Rigidbody2D rb;

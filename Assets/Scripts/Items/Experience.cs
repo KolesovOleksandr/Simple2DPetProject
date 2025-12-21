@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Experience : MonoBehaviour
 {
-    [SerializeField] float baseExp = 20f;
+    [SerializeField] float baseXp = 10f;
     [SerializeField] float pickupRadius = 0.1f;
     [SerializeField] float pickupSpeed = 10f;
 
@@ -11,7 +11,7 @@ public class Experience : MonoBehaviour
 
     public float GetExperience(float multiplier)
     {
-        return baseExp * multiplier;
+        return baseXp * multiplier;
     }
 
     void Start()
@@ -33,6 +33,11 @@ public class Experience : MonoBehaviour
 
         if (Vector3.Distance(transform.position, magneticTarget.transform.position) < pickupRadius)
         {
+            if (magneticTarget.TryGetComponent(out PlayerLevel level))
+            {
+                level.AddXp(baseXp);
+            }
+
             Destroy(gameObject);
         }
     }

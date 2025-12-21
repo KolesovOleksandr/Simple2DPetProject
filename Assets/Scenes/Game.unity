@@ -374,7 +374,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1077127096635478841, guid: a3ca571901bb1ac41b8e233f6e1b6b75, type: 3}
       propertyPath: magnetRadius
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1718619993016054992, guid: a3ca571901bb1ac41b8e233f6e1b6b75, type: 3}
       propertyPath: m_IsTrigger
@@ -423,6 +423,10 @@ PrefabInstance:
     - target: {fileID: 8332802597914955638, guid: a3ca571901bb1ac41b8e233f6e1b6b75, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028828651819954575, guid: a3ca571901bb1ac41b8e233f6e1b6b75, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
