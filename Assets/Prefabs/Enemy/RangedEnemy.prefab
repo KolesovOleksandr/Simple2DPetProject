@@ -154,6 +154,6 @@ MonoBehaviour:
   speed: 3
   cooldown: 2
   health: 0
-  maxHealth: 50
+  maxHealth: 10
   preferedDistance: 10
   projectile: {fileID: 3204054613657891347, guid: 36af601681c207946882d636ccfe808d, type: 3}

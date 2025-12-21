@@ -21,6 +21,7 @@ public class EnemyProjectile : MonoBehaviour, IDamageDealer
         rb.linearVelocity = speed * direction;
     }
 
+    // ToDo: Do not destroy projectile, hide it and return back to enemy (OjectPooling) !!!!
     void Update()
     {
         timer += Time.deltaTime;

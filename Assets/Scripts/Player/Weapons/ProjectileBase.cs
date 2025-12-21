@@ -9,6 +9,7 @@ public abstract class ProjectileBase : MonoBehaviour, IDamageDealer
 
     public abstract void Launch(Vector3 direction, float damageMultiplier, float speedMultiplier);
 
+    // ToDo: Do not destroy projectile, hide it and return back to shooter (OjectPooling) !!!!
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Fireball hit: {other.name} (layer {other.gameObject.layer})");
